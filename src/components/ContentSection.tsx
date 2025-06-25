@@ -156,7 +156,7 @@ export default function ContentSection({ itineraryRef }: ContentSectionProps = {
                         )
                       }
                     >
-                      <h3 className="font-semibold">What's included</h3>
+                      <h3 className="font-semibold">What&apos;s included</h3>
                       <ChevronDown
                         className={`w-5 h-5 text-gray-400 transition-transform ${
                           expandedSection === "included" ? "rotate-180" : ""
@@ -270,7 +270,7 @@ export default function ContentSection({ itineraryRef }: ContentSectionProps = {
 
                         <div className="mt-6">
                           <h4 className="font-semibold mb-3">
-                            What's not included
+                            What&apos;s not included
                           </h4>
                           <ul className="space-y-2">
                             <li className="flex items-start gap-2">
@@ -564,7 +564,7 @@ export default function ContentSection({ itineraryRef }: ContentSectionProps = {
                 <div className="w-2 h-2 rounded-full bg-gray-400"></div>
               </div>
               <div className="flex-1">
-                <h3 className="font-semibold">You'll get picked up</h3>
+                <h3 className="font-semibold">You&apos;ll get picked up</h3>
                 <button className="text-blue-600 hover:underline text-sm">
                   See departure details
                 </button>
@@ -650,7 +650,7 @@ export default function ContentSection({ itineraryRef }: ContentSectionProps = {
               </div>
               <div className="flex-1">
                 <h3 className="font-semibold">
-                  You'll return to the starting point
+                  You&apos;ll return to the starting point
                 </h3>
               </div>
             </div>
