@@ -16,6 +16,7 @@ import {
   Shield,
   CheckCircle,
 } from "lucide-react";
+import Image from "next/image";
 
 interface ContentSectionProps {
   itineraryRef?: React.RefObject<HTMLDivElement | null>
@@ -655,9 +656,10 @@ export default function ContentSection({ itineraryRef }: ContentSectionProps = {
           </div>
 
           {/* Right side - Map */}
-          <div className="relative">
-            <div className="flex justify-center items-center w-full h-96 lg:h-full rounded-lg overflow-hidden relative">
-              <img
+          <div className="flex items-center justify-center">
+            <div className="flex justify-center items-center aspect-square w-full rounded-lg overflow-hidden relative">
+              <Image
+                fill
                 src="/placeholder.png"
                 alt="Bromo Tengger Semeru National Park Itinerary Map"
                 className="aspect-square object-cover"
