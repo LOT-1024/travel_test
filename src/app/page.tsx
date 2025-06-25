@@ -8,26 +8,29 @@ const Home = () => {
   const itineraryRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShowNavbar(entry.isIntersecting)
-      },
-      {
-        threshold: 0.1, // Show navbar when 10% of itinerary section is visible
-        rootMargin: "-100px 0px 0px 0px", // Offset to account for navbar height
-      },
-    )
+  const sectionRef = itineraryRef.current; // Snapshot the ref value once
 
-    if (itineraryRef.current) {
-      observer.observe(itineraryRef.current)
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setShowNavbar(entry.isIntersecting);
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "-100px 0px 0px 0px",
     }
+  );
 
-    return () => {
-      if (itineraryRef.current) {
-        observer.unobserve(itineraryRef.current)
-      }
+  if (sectionRef) {
+    observer.observe(sectionRef);
+  }
+
+  return () => {
+    if (sectionRef) {
+      observer.unobserve(sectionRef); // Use the snapshot, not live ref
     }
-  }, [])
+  };
+}, []);
+
   return (
     <>
       <div
